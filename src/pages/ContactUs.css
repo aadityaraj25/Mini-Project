@@ -1,7 +1,7 @@
 
 .ContactBody {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #9e9ea0 0%, #797979 100%);
+    background: whitesmoke;
     min-height: 100vh;
     display: flex;
     align-items: center;

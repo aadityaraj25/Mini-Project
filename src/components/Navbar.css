@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    position: fixed;
+    position: absolute;
     align-items: center;
     top: 0;
     left: 0;
@@ -18,11 +18,12 @@
 .our-project {
     font-size: 22px;
     color: white;
-    font-weight: 600;
+    font-weight: 630;
+    padding-top: 2px;
 }
 
 .navbar img {
-    margin-right: 12px;
+    margin-right: 5px;
     border-radius: 15px;
 }
 .left-nav {

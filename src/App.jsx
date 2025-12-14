@@ -2,7 +2,6 @@ import React from 'react'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
 import LandingPage from './pages/LandingPage'
-// import LoginLogout from './pages/LoginLogout'
 import Discover from './pages/Discover';
 import Articles from './pages/Articles';
 import Photography from './pages/Photography';
