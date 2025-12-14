@@ -1,0 +1,107 @@
+.navbar {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    width: 100%;
+    padding: 12px 40px;
+    z-index: 999;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.our-project {
+    font-size: 22px;
+    color: white;
+    font-weight: 600;
+}
+
+.navbar img {
+    margin-right: 12px;
+    border-radius: 15px;
+}
+.left-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 36px; /* space the items similarly to the design */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li { list-style: none; }
+
+.nav-list a {
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 6px 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-list a:hover {
+    /* subtle underline on hover without shifting layout */
+    box-shadow: inset 0 -3px 0 0 rgba(255,255,255,0.12);
+}
+
+.nav-list a:hover {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.left-nav {
+    margin-right: 30px;
+}
+
+.right-nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.right-nav a {
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    padding: 6px 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.right-nav a:hover {
+    color: #9fc8ff;
+}
+
+.navbar .right-nav{
+    position: absolute;
+    right: 40px;
+}
+
+.bar {
+    color: white;
+}
+
+@media (min-width: 1000px) {
+    .bar {
+        position: absolute;
+        right: -100px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .nav-list {
+        display: none;
+    }
+}

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito", system-ui;
+    font-weight: 700;
+    scroll-behavior: smooth;
+}
+
+/* Ensure the mounted React app fills the viewport width so full-bleed sections
+   (like the homepage cover) can span the entire screen even when body is
+   using flex centering in the global stylesheet. */
+html, body, #root {
+    width: 100%;
+    height: 100%;
+}
+
+#root > * {
+    width: 100%;
+}

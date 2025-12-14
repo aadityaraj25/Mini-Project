@@ -1,0 +1,142 @@
+.content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.homepage_cover {
+    /* make the hero sit below the fixed header */
+    --header-height: 40px; /* adjust if your header height changes */
+    margin-top: var(--header-height);
+    position: relative;
+    background-size: cover;
+    height: calc(100vh - var(--header-height));
+    /* remove the padding-bottom-based aspect ratio — we want the container to fill the viewport height
+       so the absolutely-positioned video can cover it. */
+    /* padding-bottom: 56%; */
+    min-height: 420px;
+    overflow: hidden;
+}
+
+.homepage_cover_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 1;
+    /* ensure the video fills the container so object-fit: cover scales correctly */
+    width: 100%;
+    height: 100%;
+}
+
+.homepage_cover_wrap {
+    position: absolute;
+    top: 37%;
+    left: 0;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    padding-left: 140px;
+    z-index: 3;
+}
+
+.line1 {
+    font-size: 32px;
+}
+
+.line2 {
+    font-size: 50px;
+    line-height: 1.2;
+}
+
+.line3 {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.join-btn {
+    color: white;
+    font-size: 25px;
+    padding: 8px 30px;
+    border-radius: 18px;
+    background-color: rgb(59, 125, 183);
+    margin-top: 10px;
+    border: none;
+}
+
+.join-btn:hover {
+    background-color: white;
+    color: rgba(0, 0, 255, 0.683);
+}
+
+.motivation_page {
+    padding: 25px 0px;
+    text-align: center;
+    background-color: #ffff;
+}
+
+.motivation_title {
+    text-align: center;
+    letter-spacing: -0.1px;
+    color: black;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.motivation_page .motivation_title span {
+    color: #008ddc;
+    font-size: 46px;
+    font-weight: bold;
+}
+
+.motivation_page .motivation_text {
+    margin: 0px auto;
+    text-align: center;
+    letter-spacing: 0;
+    color: #666;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.motivation_page .motivation_text span {
+    display: block;
+}
+
+.motivation_page .motivation_page_images{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.home-page__insights{
+    max-height: 530px;
+    padding-bottom: 45%;
+    background-image: url("EXPERIMENT.png");
+    position: realtive;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-page__insights .text {
+    position: relative;
+    top: 25px;
+    left: 0;
+    width: 100%;
+}
+
+.home-page__insights .title {
+    text-align: center;
+    letter-spacing: -0.1px;
+    color: #ffff;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.home-page__insights .sub-title {
+    text-align: center;
+    letter-spacing: -0.1px;
+    color: #ffff;
+    font-size: 26px;
+    line-height: 1.69;
+}
