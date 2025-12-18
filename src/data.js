@@ -53,5 +53,5 @@ export const mockUsers = {
 export const mockStats = {
   totalUsers: 1500,
   totalEvents: 3,
-  revenue: '$12,500',
+  totalPhotos: 5432
 };

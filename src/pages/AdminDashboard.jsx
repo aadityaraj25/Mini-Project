@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaUsers, FaCalendarAlt, FaChartBar, FaBell, FaCog, FaSearch, FaPlus, FaEdit, FaTrash, FaUserPlus } from 'react-icons/fa';
+import { FaUsers, FaCalendarAlt, FaChartBar, FaBell, FaCog, FaSearch, FaPlus, FaEdit, FaTrash, FaUserPlus, FaCamera } from 'react-icons/fa';
 import { CheckCircle, AlertTriangle, Info, Mail } from 'lucide-react';
 import './AdminDashboard.css';
 import Footer from '../components/Footer';
@@ -85,13 +85,13 @@ const AdminDashboard = () => {
           </div>
         </div>
         <div className="stat-card warning">
-          <div className="stat-icon"><FaChartBar /></div>
+          <div className="stat-icon"><FaCamera /></div>
           <div className="stat-details">
             <div className="stat-header">
-              <h3>{stats.revenue}</h3>
-              <div className="stat-change negative">-2%</div>
+              <h3>{stats.totalPhotos}</h3>
+              <div className="stat-change positive">+20%</div>
             </div>
-            <p>Revenue</p>
+            <p>Submitted Photos</p>
           </div>
         </div>
         <div className="stat-card info">
