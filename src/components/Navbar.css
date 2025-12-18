@@ -21,6 +21,9 @@
     font-weight: 630;
     padding-top: 2px;
 }
+.our-project:hover{
+    color: whitesmoke;
+}
 
 .navbar img {
     margin-right: 5px;

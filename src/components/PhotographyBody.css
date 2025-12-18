@@ -1,16 +1,17 @@
-/* Photography body styles - cleaned and deduplicated */
+/* PhotographyBody.css */
 
-.photography-body{
-    background-color: whitesmoke;
+.photography-body-wrapper {
+  background-color: whitesmoke;
+  min-height: 100vh;
 }
 
-.main-content {
+.photography-body-main-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 67px 1rem;
 }
 
-.filters-section {
+.photography-body-filters-section {
   padding-top: 20px;
   margin-bottom: 2rem;
   display: flex;
@@ -19,73 +20,164 @@
   justify-content: center;
 }
 
-.filter-btn {
-  padding: 0.2rem 0.8rem;
+.photography-body-filter-btn {
+  padding: 0.4rem 1.2rem;
   border: 1px solid #ddd;
   border-radius: 20px;
   background: white;
-  color: black;
+  color: #333;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.filter-btn:hover { background: #f0f0f0; }
-.filter-btn.active { background: linear-gradient(135deg, #414760 0%, #5a5360 100%);
- color: white; }
+.photography-body-filter-btn:hover {
+  background: #f0f0f0;
+}
 
-/* Default: single-column (stacked) layout */
-.challenges-grid {
+.photography-body-filter-btn.active {
+  background: linear-gradient(135deg, #414760 0%, #5a5360 100%);
+  color: white;
+  border-color: transparent;
+}
+
+/* Grid Layout */
+.photography-body-challenges-grid {
   display: grid;
-  grid-template-columns: 1fr; /* single column */
+  grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
-.challenge-card {
+.photography-body-challenge-card {
   background: white;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   position: relative;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.challenge-card:hover { transform: translateY(-5px); }
 
-.image-container { position: relative; }
+.photography-body-challenge-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
 
-.download-btn {
+/* Image Handling */
+.photography-body-challenge-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.photography-body-download-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.8);
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
   border: none;
-  padding: 10px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
   opacity: 0;
   visibility: hidden;
-}
-.challenge-card:hover .download-btn { opacity: 1; visibility: visible; }
-.download-btn:hover { transform: scale(0.9); }
-.download-btn i { font-size: 18px; }
-
-.challenge-image { width: 100%; height: 200px; object-fit: cover; }
-.challenge-info { padding: 1rem; }
-.challenge-title { font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: bold; }
-.challenge-details { display:flex; justify-content:flex-end; font-size:0.9rem; color:#666 }
-
-.challenge-popup { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); display:none; justify-content:center; align-items:center; z-index:1000 }
-.popup-content { background:white; padding:2rem; border-radius:8px; max-width:600px; width:90%; position:relative }
-.close-btn { position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer }
-.challenge-popup.visible { display:flex }
-
-/* Responsive: switch to multi-column at wider sizes */
-@media (min-width: 900px) {
-  .challenges-grid { grid-template-columns: repeat(3, 1fr); }
+  z-index: 2;
 }
 
-@media (max-width: 768px) {
-  .challenges-grid { grid-template-columns: 1fr; }
-  .filters-section { flex-wrap: wrap }
+.photography-body-challenge-card:hover .photography-body-download-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+.photography-body-download-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+/* Content Info */
+.photography-body-challenge-info {
+  padding: 1.25rem;
+}
+
+.photography-body-challenge-title {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.photography-body-challenge-details {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Popup/Modal Styles */
+.photography-body-challenge-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+}
+
+.photography-body-challenge-popup.visible {
+  display: flex;
+}
+
+.photography-body-popup-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.photography-body-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.photography-body-close-btn:hover {
+  color: #333;
+}
+
+.photography-body-popup-title {
+  margin-top: 0;
+  color: #1a1a1a;
+}
+
+/* Responsive Queries */
+@media (min-width: 768px) {
+  .photography-body-challenges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .photography-body-challenges-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

@@ -1,0 +1,432 @@
+.Challenges-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.Challenges-header {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Challenges-header-left h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.Challenges-header-right {
+  display: flex;
+  gap: 10px;
+}
+
+.Challenges-header-stats {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.Challenges-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.Challenges-stat-item:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.Challenges-stat-item.Challenges-add-btn {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 10px;
+}
+
+.Challenges-stat-item.Challenges-add-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.Challenges-stat-item.Challenges-gold {
+  background-color: rgba(255, 165, 0, 0.2);
+  border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+.Challenges-stat-value {
+  font-weight: 600;
+}
+
+.Challenges-icon {
+  font-size: 12px;
+}
+
+.Challenges-tabs-container {
+  background-color: white;
+  padding: 0 40px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  gap: 40px;
+}
+
+.Challenges-tab-button {
+  background: none;
+  border: none;
+  padding: 16px 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+  text-transform: capitalize;
+  /* border-radius: 50%; */
+  /* border-color: white; */
+}
+
+.Challenges-tab-button:hover {
+  color: #333;
+  outline: none;
+}
+
+.Challenges-tab-button.Challenges-active {
+  color: black;
+  outline: none;
+}
+
+.Challenges-tab-button.Challenges-active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #5a5360;
+}
+
+.Challenges-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+}
+
+.Challenges-empty-state-icon {
+  font-size: 64px;
+  opacity: 0.5;
+}
+
+.Challenges-empty-state-text {
+  font-size: 16px;
+  color: #999;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.Challenges-empty-state-desc {
+  font-size: 14px;
+  color: #aaa;
+  text-align: center;
+  max-width: 500px;
+}
+
+/* Content Area */
+.Challenges-content-area {
+  padding: 40px;
+}
+
+.Challenges-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.Challenges-filter-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* .Challenges-badge {
+  background-color: white;
+  border: 2px solid #00d4ff;
+  color: #00d4ff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+} */
+
+/* Challenges-badge base style to match photography-body-filter-btn */
+.Challenges-badge {
+    padding: 0.4rem 1.2rem;
+    border: 1px solid #ddd; /* Light grey border like the New/Trending buttons */
+    border-radius: 20px;
+    background: white;
+    color: #414760; /* Using your theme's dark color for text */
+    font-size: 13px; /* Adjusted font size for better fit */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+/* Hover State: Only the border and text color change to your theme's primary color */
+.Challenges-badge:hover {
+    background-color: white; /* Remains white on hover */
+    border-color: #414760;   /* Darker border appears on hover */
+    color: #414760;
+}
+
+/* Active State: Full gradient fill and white text */
+/* Apply this class in your React component when a category is selected */
+.Challenges-badge.Challenges-active {
+    background: linear-gradient(135deg, #414760 0%, #5a5360 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* .Challenges-badge:hover {
+  background-color: #00d4ff;
+  color: white;
+} */
+
+
+/* .Challenges-badge:hover {
+  background-color: #f0f0f0;
+  border-color: #5a5360;
+} */
+
+.Challenges-badge.Challenges-active:hover{
+  background: linear-gradient(135deg, #414760 0%, #5a5360 100%);
+  color: white;
+}
+
+.Challenges-badge.active, .Challenges-badge:active {
+  background: linear-gradient(135deg, #414760 0%, #5a5360 100%);
+  color: white; /* Ensures text is visible against the dark gradient */
+  border: none;
+}
+
+.Challenges-sort-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.Challenges-sort-dropdown {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.Challenges-sort-icon {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.Challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.Challenges-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.Challenges-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.Challenges-card-image {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.Challenges-card-image.Challenges-img1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.Challenges-card-image.Challenges-img2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.Challenges-card-image.Challenges-img3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.Challenges-card-image.Challenges-img4 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+.Challenges-card-image.Challenges-img5 { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+.Challenges-card-image.Challenges-img6 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+
+.Challenges-featured-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff1493;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.Challenges-card-title {
+  padding: 16px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+}
+
+.Challenges-card-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.Challenges-footer-item {
+  padding: 12px;
+  font-size: 11px;
+  text-align: center;
+  border-right: 1px solid #e0e0e0;
+}
+
+.Challenges-footer-item:last-child {
+  border-right: none;
+}
+
+.Challenges-footer-label {
+  color: #aaa;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.Challenges-footer-value {
+  color: #333;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .Challenges-header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .Challenges-tabs-container {
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .Challenges-header-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .Challenges-content-area {
+    padding: 20px;
+  }
+
+  .Challenges-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .Challenges-content-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* New User Section Styles */
+.Challenges-user-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 10px;
+  padding-left: 15px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Challenges-nav-icon-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.Challenges-nav-icon-btn:hover {
+  opacity: 1;
+}
+
+.Challenges-profile-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.Challenges-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.Challenges-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Update header-stats to ensure proper alignment */
+.Challenges-header-stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
