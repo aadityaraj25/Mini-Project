@@ -51,7 +51,7 @@ export const mockUsers = {
 };
 
 export const mockStats = {
-  totalUsers: 1500,
-  totalEvents: 3,
-  totalPhotos: 5432
+  totalUsers: 3,
+  totalEvents: 1,
+  totalPhotos: 0
 };
